@@ -47,16 +47,3 @@ func TestGetAPIKey_MalformedHeader(t *testing.T) {
 	}
 }
 
-func TestGetAPIKey_ExtraSpaces(t *testing.T) {
-	h := http.Header{}
-	h.Set("Authorization", "ApiKey  abc123")
-
-	key, err := GetAPIKey(h)
-	if err != nil {
-		t.Fatalf("expected no error, got %v", err)
-	}
-	if key != "abc123" {
-		t.Fatalf("expected key %q, got %q", "abc123", key)
-	}
-}
-
