@@ -46,4 +46,3 @@ func TestGetAPIKey_MalformedHeader(t *testing.T) {
 		t.Fatal("expected error, got nil")
 	}
 }
-
